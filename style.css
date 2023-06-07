@@ -62,8 +62,9 @@ body{
     /*вирівнювання по головній осі justify-content: */
     /* flex-start; створює рівний проміжок між елементами  */
     /* justify-content: flex-start; */
-
-    align-items: baseline;
+/*  align-items: stretch; вирівнювання по висоті самого високого елемента в блоці */
+/*  align-items: baseline ;  вирівнювання по лінію тексту це замітно якщо в якосгось блоку інший шрифт */
+    align-items:center ;
     border: 20px solid #ece89d;
     margin: 0 0 20px 0;
 }
