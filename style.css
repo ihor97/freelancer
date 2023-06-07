@@ -64,6 +64,17 @@ body{
 
 .block__column{
     border: 20px solid #5e5373;
+    /* вказує розмір елемента в контейнері */
+    /*flex-basis це не width а базове значення розміру  */
+    /* flex-basis: 100px; */
+    /*flex-grow: 0; забороняє збільшуватися елементу в контейнері відносно базового розміру  */
+    /* flex-grow: 1; незалежно від значення flex-basis елементи займуть всю ширину контейнера*/
+    /* flex-grow: 1; */
+    /*   flex-shrink: 1; дозволено робитися ментшим */
+    /*   flex-shrink: 0; дозволено робитися меншим від того що вказано в flex-basis */
+    /* flex-shrink: 1; */
+    /* скорочений запис flex-grow flex-shrink flex-basis */
+    flex:0 1 auto;
 }
 
 .block__item{
@@ -94,18 +105,11 @@ body{
 }
 
 .block__column_1{
-    /*align-self дозволяє перезаписати властивість align-items в блоці батька  */
-    align-self: stretch;
-order: 3;
+
 }
 .block__column_2{
-    /* треба завжди задаватипорядок виводу якщо ми хочемо зробити якусь послідовність */
-order: 2;
 
 }
 .block__column_3{
-    align-self: flex-end;
-    /* задає порядок виводу */
-    order:1;
 
 }
