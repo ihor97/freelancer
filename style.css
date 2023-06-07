@@ -55,20 +55,11 @@ body{
 
 }
 .block__row{
-    /* коли ми задаємо цю властиість у елемента батька пропадає ширина на весь екран */
-    /* він також приймає деякі властивості блочно строчних елементів */
-    /* display: inline-flex; */
     display: flex;
-    /*вирівнювання по головній осі justify-content: */
-    /* flex-start; створює рівний проміжок між елементами  */
-    /* justify-content: flex-start; */
-/*  align-items: stretch; вирівнювання по висоті самого високого елемента в блоці */
-/*  align-items: baseline ;  вирівнювання по лінію тексту це замітно якщо в якосгось блоку інший шрифт */
     align-items:center ;
     border: 20px solid #ece89d;
     margin: 0 0 20px 0;
-    /*flex-wrap: wrap; заставляє елементі перекидуватися при нестачі простору на другий рядок  */
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .block__column{
@@ -100,4 +91,21 @@ body{
     position: relative;
     padding: 0 0 0 25px;
     line-height: 15px;
+}
+
+.block__column_1{
+    /*align-self дозволяє перезаписати властивість align-items в блоці батька  */
+    align-self: stretch;
+order: 3;
+}
+.block__column_2{
+    /* треба завжди задаватипорядок виводу якщо ми хочемо зробити якусь послідовність */
+order: 2;
+
+}
+.block__column_3{
+    align-self: flex-end;
+    /* задає порядок виводу */
+    order:1;
+
 }
