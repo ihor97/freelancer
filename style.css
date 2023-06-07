@@ -67,6 +67,8 @@ body{
     align-items:center ;
     border: 20px solid #ece89d;
     margin: 0 0 20px 0;
+    /*flex-wrap: wrap; заставляє елементі перекидуватися при нестачі простору на другий рядок  */
+    flex-wrap: wrap;
 }
 
 .block__column{
