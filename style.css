@@ -55,11 +55,15 @@ body{
 
 }
 .block__row{
+    height: 600px;
     display: flex;
-    align-items:center ;
     border: 20px solid #ece89d;
     margin: 0 0 20px 0;
-    align-items: center;
+    flex-direction:  column;
+    /*  align-items: stretch; по замовчуванню */
+    /* align-items: flex-end; */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .block__column{
@@ -67,22 +71,24 @@ body{
     /* вказує розмір елемента в контейнері */
     /*flex-basis це не width а базове значення розміру  */
     /* flex-basis: 100px; */
+
     /*flex-grow: 0; забороняє збільшуватися елементу в контейнері відносно базового розміру  */
     /* flex-grow: 1; незалежно від значення flex-basis елементи займуть всю ширину контейнера*/
-    /* flex-grow: 1; */
+    /* flex-grow: 0; */
     /*   flex-shrink: 1; дозволено робитися ментшим */
     /*   flex-shrink: 0; дозволено робитися меншим від того що вказано в flex-basis */
     /* flex-shrink: 1; */
     /* скорочений запис flex-grow flex-shrink flex-basis */
-    flex:0 1 auto;
+    /* flex:0 1 auto; */
 }
 
 .block__item{
     background-color: #18b5a4;
-    padding: 50px;
+    padding: 20px;
     font-size: 50px;
     color: #fff;
     font-weight: 700;
+    text-align: center;
 }
 
 .block__list{
@@ -108,6 +114,7 @@ body{
 
 }
 .block__column_2{
+    /* flex: 1 1 auto; */
 
 }
 .block__column_3{
