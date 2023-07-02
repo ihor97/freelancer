@@ -21,37 +21,39 @@
   <div class="wrapper">
     <header class="header">
       <div class="header__container">
-        <a href="" class="header__logo"></a>
+        <a href class="header__logo"></a>
 
         <div class="header__menu menu">
           <div class="menu__icon"><span></span></div>
           <nav class="menu__body">
             <ul class="menu__list">
               <li>
-                <a href="" class="menu__link">Розділ №1</a>
+                <!-- будемо навігувати через data attribute до потрібної секції -->
+                <a data-goto=".page__section_1" href="#" class="menu__link">Розділ №1</a>
               </li>
               <li>
-                <a href="" class="menu__link">Розділ №2</a>
+                <a data-goto=".page__section_2" href="#" class="menu__link">Розділ №2</a>
               </li>
               <li>
-                <a href="" class="menu__link">Розділ №3</a>
+                <a data-goto=".page__section_3" href="#" class="menu__link">Розділ №3</a>
               </li>
               <li>
-                <a href="" class="menu__link">Сторінка №1</a>
+                <a href class="menu__link">Сторінка №1</a>
+                <span class="menu__arrow"></span>
                 <ul class="menu__sub-list">
                   <li>
-                    <a href="" class="menu__sub-link">Розділ сторінки №1</a>
+                    <a href class="menu__sub-link">Розділ сторінки №1</a>
                   </li>
                   <li>
-                    <a href="" class="menu__sub-link">Розділ сторінки №2</a>
+                    <a href class="menu__sub-link">Розділ сторінки №2</a>
                   </li>
                   <li>
-                    <a href="" class="menu__sub-link">Розділ сторінки №3</a>
+                    <a href class="menu__sub-link">Розділ сторінки №3</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="" class="menu__link">Сторінка №2</a>
+                <a href class="menu__link">Сторінка №2</a>
               </li>
             </ul>
           </nav>
