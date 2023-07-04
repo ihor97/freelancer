@@ -6,17 +6,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Life</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- display=swap дозволяє грузитися шрифтам більш оптимізовано -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
 
 
 
-  <link rel="stylesheet" href="style.css">
-
-
-  
 </head>
 
 <body>
+  <!--wrapper для  додаткової стилізації  -->
+  <div class="wrapper">
+    <header id="open" class="header">
+      <div id="close" class="header__container">
+
+        <a href="#" class="header__logo">
+          <img src="./img/Group 2.svg" alt="logo">
+        </a>
+        <div class="header__menu menu">
+          <nav  class="menu__body">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="" class="menu__link">Home</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">FEATURES</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">SUPPORT</a>
+              </li>
+              <li class="menu__item">
+                <a href="" class="menu__link">CONTACT US</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__button">
+          <a href="" class="button button_blue">DOWNLOAD</a>
+          <!--  -->
+          <a href="#open"  class=" icon-menu"><span></span></a>
+          <a href="#close"  class=" close-icon-menu"></a>
+        </div>
+      </div>
+    </header>
+
+
+
+    <main class="main">
+      <section class="get-started">
+        <div class="get-started__container">
+          <div class="get-started__content">
+            <div class="get-started__block-text block-text">
+              <h1 class="block-text__title block-text__title_blue">Take care of yours family’s <span>health</span> .</h1>
+              <div class="block-text__text">All in one destination for COVID-19 health queries.  Consult 10,000+ health workers about your concerns.</div>
+              <a href="#" class="block-text__button button">GET STARTED</a>
+            </div>
+      
+          </div>
+          <div class="get-started__image">
+            <img src="./img/Group 14.svg" alt="image with doctor">
+          </div>
+          <div class="get-started__video">
+            <a href="#" class=" video-get-started">
+              <div class="video-get-started__icon">
+                <img src="./img/Group 23.svg" alt="кнопка play">
+              </div>
+              <div class="video-get-started__body">
+                <div class="video-get-started__title">Stay safe with GoCorona</div>
+                <div class="video-get-started__text">Watch Video</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      
+
+
+    </main>
+    <footer class="footer">
+      footer
+    </footer>
+  </div>
 
 
 
@@ -29,11 +106,9 @@
 
 
 
+  <script src="./js/script.js"></script>
 
 
-<script  src="script.js"></script>
-
-  
 </body>
 
 </html>

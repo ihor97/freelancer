@@ -1,0 +1,645 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+html,
+body {
+	line-height: 1;
+	height: 100%;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+img {
+	vertical-align: top;
+}
+
+body {
+	font-family: Rubik;
+	font-size: 12px;
+	color: #616161;
+}
+
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	/* зайняв всю доступну висоту  */
+	flex: 1 1 auto;
+}
+
+/* любтй обєкт який матимеме атрибут клас з цією строкою буде імплементити ці стилі */
+[class*="__container"] {
+	/* трохи збільшуємо  */
+	max-width: 1087px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+/* header-----------------------------------> */
+/* PC */
+@media (max-width: 1087px) {
+	[class*="__container"] {
+		max-width: 970px;
+	}
+
+
+}
+
+/* tablet */
+@media (max-width: 991.98px) {
+	[class*="__container"] {
+		max-width: 750px;
+	}
+
+
+
+}
+
+/* зменшуємо трохирозмір так як стилі для мобілок можуть появитися і на плпншеті */
+/* мобілка */
+@media (max-width: 767.98px) {
+	[class*="__container"] {
+		max-width: none;
+	}
+
+
+}
+
+/* маленькі мобілка */
+
+@media (max-width: 479.98px) {}
+
+
+
+.header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+}
+
+.header__container {
+	display: flex;
+	min-height: 114px;
+	align-items: center;
+}
+
+.header__logo {
+	position: relative;
+	z-index: 5;
+}
+
+.header__menu {
+	flex: 1 1 auto;
+}
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 40px;
+}
+
+.menu__list {
+	display: flex;
+}
+
+.menu__item {
+	margin-right: 40px;
+}
+
+
+
+.menu__link {
+	font-family: Raleway;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 10px;
+	/*line-height має бути відносним  */
+	line-height: 1.2;
+	color: #000;
+	letter-spacing: 1px;
+}
+
+.menu__link:hover {
+	text-decoration: underline;
+}
+
+.header__button {
+	/* кнопці задали статичну ширину */
+	flex: 0 0 252px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+@media (max-width: 991.98px) {
+	.header__container {
+		min-height: 80px;
+	}
+
+	.header__button {
+		flex: 0 0 170px;
+	}
+
+	.menu__item {
+		margin-right: 30px;
+	}
+
+}
+
+@media (max-width: 767.98px) {
+	.menu__body {
+
+		position: fixed;
+		top: 0;
+		/* тут ми ховаємо завдяки тому що ставимо -100% */
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		/* для того якщо буде більше пункітв щоб появився скрол */
+		overflow: auto;
+		background-color: #fff;
+		padding: 90px 15px 30px 15px;
+		transition: left .3s ease 0s;
+	}
+
+	/* target спрацьовує на клік header получає target і menu__body вилітає*/
+	.header:target .menu__body {
+		left: 0;
+	}
+
+	/* зробили для того щоб меню заїджало під шапку */
+	.header:target .menu__body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 80px;
+		width: 100%;
+		background-color: #fff;
+
+	}
+
+	.menu__list {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.menu__item {
+		margin-bottom: 25px;
+	}
+
+	.menu__item:last-child {
+		margin-bottom: 0;
+	}
+
+	.menu__link {
+		color: #000;
+		font-size: 20px;
+	}
+
+	/* скриваємо надпис */
+
+}
+
+@media (max-width: 479.98px) {
+	.header__logo {
+		flex: 0 0 40px;
+		overflow: hidden;
+	}
+}
+
+.button {
+	/* так як це силка inline-block*/
+	display: inline-block;
+	font-family: Raleway;
+	font-weight: 800;
+	font-size: 10px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fcfdfe;
+	/* робимо висоту за допомогою падінгів */
+	padding: 14px 30px;
+	border-radius: 5px;
+	background-color: #ec5863;
+	transition: background-color .3s ease 0s;
+	z-index: 5;
+}
+
+.button:hover {
+	background-color: #f19299;
+}
+
+.button_blue {
+	background-color: #4285f4;
+
+}
+
+.button_blue:hover {
+	background-color: #5b95f1;
+}
+
+/* ---------------------------------- */
+.close-icon-menu,
+.icon-menu {
+	display: none;
+}
+
+/* це все на мобілках */
+@media(max-width: 767.98px) {
+	.menu__item {
+		margin-right: 0;
+	}
+
+	.icon-menu {
+		position: relative;
+		flex: 0 0 30px;
+		height: 18px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-left: 20px;
+
+	}
+
+	.close-icon-menu {
+		flex: 0 0 30px;
+		height: 30px;
+		position: relative;
+		margin-left: 20px;
+
+	}
+
+	.icon-menu::after,
+	.icon-menu::before {
+		content: '';
+		height: 2px;
+		background-color: #000;
+	}
+
+
+	.icon-menu span {
+		position: relative;
+		height: 2px;
+		background-color: #000;
+	}
+
+	.close-icon-menu::after,
+	.close-icon-menu::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		background-color: #000;
+		height: 2px;
+	}
+
+	.close-icon-menu::before {
+		transform: rotate(45deg);
+	}
+
+	.close-icon-menu::after {
+		transform: rotate(-45deg);
+	}
+
+	.header:target .icon-menu {
+		display: none;
+	}
+
+	.header:target .close-icon-menu {
+		display: flex;
+	}
+}
+
+/* section1------------------------------------------ */
+
+.block-text {}
+
+.block-text__title {
+	font-weight: 700;
+	font-size: 44px;
+	line-height: 126%;
+	color: #000;
+}
+
+/* not last child дає змогу забирати відступ в останнього елемента так що коли щось заберуть останній завджи не буде мати відступа */
+.block-text__title:not(:last-child) {
+	margin: 0 0 12px 0;
+}
+
+.block-text__title span {
+	color: #ec5863;
+}
+
+.block-text__title_blue span {
+	color: #4285f4;
+
+}
+
+.block-text__text {
+	line-height: 138.5%;
+
+}
+
+.block-text__text:not(:last-child) {
+	margin: 0 0 24px 0;
+}
+
+.block-text__button {}
+
+
+@media (max-width:767.98px) {
+	.block-text__title{
+		font-size: 34px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------- */
+
+.get-started {
+	background-color: #fafbfd;
+}
+
+.get-started__container {
+	padding: 150px 0 50px 0;
+
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+/* червоний елемент */
+.get-started__container::before {
+	content: '';
+	position: absolute;
+	/* для всієї ширини viewport */
+	width: 100vw;
+	height: 100%;
+	right: 267px;
+	top: 0;
+	background-color: #ec5863;
+	border-radius: 30px 0 0 30px;
+	transform: translate(100%, 0);
+}
+
+.get-started__content {
+	flex: 0 1 48%;
+	padding: 0 20px;
+}
+
+.get-started__block-text {
+	max-width: 410px;
+}
+
+.button {}
+
+.get-started__image {
+	flex: 0 1 52%;
+	position: relative;
+	z-index: 2;
+
+}
+
+.get-started__image img {
+	width: 100%;
+}
+
+.get-started__video {
+	flex: 1 1 100%;
+	padding: 60px 0 0 20px;
+}
+
+.video-get-started {
+	/*  робимо силку не на всю ширину так щоб ми не нажисали по всій ширині*/
+	display: inline-flex;
+	align-items: center;
+}
+
+.video-get-started__icon {
+	flex: 0 0 44px;
+
+}
+
+.video-get-started__body {
+
+	padding: 0 0 0 12px;
+}
+
+.video-get-started__title {
+	color: #b0b0b0;
+	line-height: 126%;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+}
+
+.video-get-started__title:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.video-get-started__text {
+	font-size: 9px;
+	line-height: 126%;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #000;
+}
+
+@media (max-width:991.98px) {
+
+	.get-started__container::before {
+		right: 185px;
+		border-radius: 20px 0 0 20px;
+	}
+}
+
+
+@media (max-width:767.98px) {
+	.get-started__container {
+		padding: 70px 15px 30px 15px;
+	}
+
+	.get-started__container::before {
+		display: none;
+	}
+
+	.get-started__block-text {
+		max-width: none;
+	}
+
+	.get-started__content {
+		flex: 1 1 100%;
+		padding: 0;
+	}
+
+	.get-started__image {
+		flex: 1 1 100%;
+		text-align: center;
+		padding: 30px 0 ;
+	}
+	.get-started__video{
+		padding: 0;
+	}
+}
