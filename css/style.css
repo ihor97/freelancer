@@ -821,6 +821,7 @@ body {
 }
 .statistics-experts__body {
 
+	margin-bottom: 80px;
 	
 }
 
@@ -840,34 +841,113 @@ body {
 
 }
 .statistics-experts__decor_2 {
+	width: 97px;
+	height: 97px;
+	right: 50%;
+	transform: rotate(-30deg);
+top: -40px;
+
 
 }
 .statistics-experts__decor_3 {
-	
+	width: 128px;
+	height: 128px;
+	right: -65px;
+	transform: rotate(-30deg);
+	top: -0px;
 }
 
 .body-statistics-experts {
-	padding: 20px 80px;
+	padding: 25px 80px;
 	display: flex;
 	align-items: center;
 
 }
 .body-statistics-experts__item {
-	flex: 1 1 auto;
+	flex: 1 1 25%;
 	
+}
+.body-statistics-experts__item:last-child {
+	flex: 1 1 50%;
+
 }
 .body-statistics-experts__value {
 	display: flex;
-	align-items: center;
 	line-height: 1.2;
 	font-size: 36px;
 	font-weight: 700;
 	text-align: center;
 	letter-spacing: 1px;
 	color: #ec5863;
-
+margin-bottom: 5px;
 	
 }
 .body-statistics-experts__text {
-	
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 1.8;
+	letter-spacing: 0.37em;
+	text-transform: uppercase;
+	color: #000;
 }
+
+.experts__block-text {
+	max-width: 400px;
+	}
+/* робимо адаптивне відео */
+	.experts__video{
+		padding-bottom:30%;
+		position: relative;
+		flex: 0 1 50%;
+
+	}
+	.experts__video iframe{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+	.experts__body{
+		display: flex;
+		align-items: center;
+	}
+	.experts__content{
+		flex: 0 1 50%;
+	}
+
+	@media(max-width: 767.98px) {
+		.experts__body{
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.experts__video{
+			padding-bottom: 58%;
+		}
+		.experts__content{
+			padding: 0;
+			margin-bottom: 30px;
+		}
+		.experts{
+			margin-bottom: 83px;
+		}
+		.statistics-experts__body{
+			margin-bottom: 30px;
+
+		}
+		.body-statistics-experts{
+			padding: 25px;
+		}
+
+	}
+	
+	@media(max-width: 479.98px) {
+		.statistics-experts__body{
+			flex-direction: column;
+		}
+		.body-statistics-experts__item:not(:last-child){
+			margin-bottom: 15px;
+		}
+	
+	}
